@@ -8,7 +8,7 @@ library(grid)
 library(gridExtra)
 
 df <- read.csv("values.csv") #https://news.gallup.com/poll/352316/americans-confidence-major-institutions-dips.aspx
-df[,c(2:4)] <- df[,c(2:4)]/100 #format numeric data =as decimal
+df[,c(2:4)] <- df[,c(2:4)]/100 # format numeric data as decimal
 df <- df[order(df$Overall), ] # sort highest to lowest trusted institutions
 df$order <- order(df$Overall) # record sort order
 df$Institution <- fct_reorder(df$Institution, df$order) # store institution as ordered factor
